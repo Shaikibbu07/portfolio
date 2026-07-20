@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shaik Ibrahim — Software Engineer</title>
+  <meta name="description" content="Portfolio of Shaik Ibrahim — Java Backend Developer, AI Enthusiast, CSE Student">
+  <meta property="og:title" content="Shaik Ibrahim — Software Engineer">
+  <meta property="og:description" content="Java Backend Developer · AI Enthusiast · CSE Student">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Scroll spacer — creates the scrollable height -->
+  <div id="scroll-spacer"></div>
+
+  <!-- Three.js canvas -->
+  <div id="canvas-wrap"></div>
+
+  <!-- Scroll progress bar -->
+  <div id="scroll-bar"></div>
+
+  <!-- Custom cursor -->
+  <div class="cur-dot" id="cur-dot"></div>
+  <div class="cur-ring" id="cur-ring"><span class="cur-label" id="cur-label"></span></div>
+  <div class="cur-trail" id="ct0"></div>
+  <div class="cur-trail" id="ct1"></div>
+  <div class="cur-trail" id="ct2"></div>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="pl-name" id="pl-name"></div>
+    <div class="pl-line" id="pl-line"></div>
+    <div class="pl-pct" id="pl-pct">00%</div>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="nav">
+    <div class="nav-logo">SI<em>.</em></div>
+    <ul class="nav-links">
+      <li><a href="#" data-section="about">About</a></li>
+      <li><a href="#" data-section="skills">Skills</a></li>
+      <li><a href="#" data-section="projects">Work</a></li>
+      <li><a href="#" data-section="experience">Experience</a></li>
+      <li><a href="#" data-section="contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button id="cmd-btn" data-cursor="CMD+K">⌘K</button>
+      <button id="theme-btn" data-cursor="THEME">☀</button>
+    </div>
+  </nav>
+
+  <!-- Status bar -->
+  <div id="status">
+    <span id="status-section">HERO</span>
+    <span id="status-pct">0.00%</span>
+  </div>
+
+  <!-- Scroll cue -->
+  <div class="scroll-cue" id="scroll-cue">
+    SCROLL
+    <span class="drip"></span>
+  </div>
+
+  <!-- ═══════════════════════════════
+       SECTION LAYERS
+       ═══════════════════════════════ -->
+
+  <!-- HERO -->
+  <div class="layer" id="layer-hero">
+    <div class="inner">
+      <div class="hero-greeting" id="hero-greeting">Good evening, welcome.</div>
+      <h1 class="hero-name" id="hero-title">
+        <span class="line"><span>SHAIK</span></span>
+        <span class="line"><span>IBRAHIM</span></span>
+      </h1>
+      <div class="hero-role">Java Backend Developer · AI Enthusiast · CSE Student</div>
+      <div class="hero-type"><span id="typewriter"></span><span class="cursor-blink"></span></div>
+      <div class="hero-actions interactive">
+        <a class="primary" href="#" data-cursor="OPEN">Resume ↓</a>
+        <a href="https://github.com/Shaikibbu07" target="_blank" data-cursor="OPEN">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" data-cursor="OPEN">LinkedIn</a>
+        <a href="#" data-section="contact" data-cursor="SEND">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARQUEE -->
+  <div class="layer" id="layer-marquee">
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        <span>Java</span><span>Spring Boot</span><span>Python</span><span>MySQL</span>
+        <span>React</span><span>REST APIs</span><span>Scikit-learn</span><span>Pandas</span>
+        <span>Git</span><span>JWT</span><span>NumPy</span><span>Postman</span>
+        <span>Java</span><span>Spring Boot</span><span>Python</span><span>MySQL</span>
+        <span>React</span><span>REST APIs</span><span>Scikit-learn</span><span>Pandas</span>
+        <span>Git</span><span>JWT</span><span>NumPy</span><span>Postman</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="layer" id="layer-about">
+    <div class="inner">
+      <div class="about-grid">
+        <div>
+          <div class="eyebrow">About</div>
+          <h2 class="section-heading">CSE student building backend systems and AI-powered apps.</h2>
+          <p class="about-text">I'm a Computer Science Engineering student passionate about backend development and artificial intelligence. I enjoy solving real-world problems using Java, Spring Boot, MySQL, and modern AI technologies.</p>
+          <p class="about-text">My goal is to become a software engineer who builds scalable, reliable, and impactful applications.</p>
+        </div>
+        <div class="stats-grid" id="stats-grid">
+          <div class="stat"><div class="stat-num"><span class="counter" data-target="4">0</span><span class="plus">+</span></div><div class="stat-label">Projects built</div></div>
+          <div class="stat"><div class="stat-num"><span class="counter" data-target="300">0</span><span class="plus">+</span></div><div class="stat-label">DSA solved</div></div>
+          <div class="stat"><div class="stat-num"><span class="counter" data-target="3">0</span><span class="plus">+</span></div><div class="stat-label">Certifications</div></div>
+          <div class="stat"><div class="stat-num"><span class="counter" data-target="2">0</span></div><div class="stat-label">Hackathons</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="layer" id="layer-skills">
+    <div class="inner">
+      <div class="eyebrow">Skills</div>
+      <h2 class="section-heading" style="margin-bottom:32px">Tools I reach for</h2>
+      <div class="skills-grid" id="skills-grid">
+        <div class="skill-group"><h4>Languages</h4>
+          <div class="skill-item"><span class="name">Java</span><span class="pct">90%</span></div><div class="skill-bar"><div class="skill-fill" data-w="90"></div></div>
+          <div class="skill-item"><span class="name">Python</span><span class="pct">80%</span></div><div class="skill-bar"><div class="skill-fill" data-w="80"></div></div>
+          <div class="skill-item"><span class="name">C</span><span class="pct">75%</span></div><div class="skill-bar"><div class="skill-fill" data-w="75"></div></div>
+          <div class="skill-item"><span class="name">SQL</span><span class="pct">80%</span></div><div class="skill-bar"><div class="skill-fill" data-w="80"></div></div>
+        </div>
+        <div class="skill-group"><h4>Backend</h4>
+          <div class="skill-item"><span class="name">Spring Boot</span><span class="pct">85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
+          <div class="skill-item"><span class="name">REST APIs</span><span class="pct">85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
+          <div class="skill-item"><span class="name">Spring Security</span><span class="pct">75%</span></div><div class="skill-bar"><div class="skill-fill" data-w="75"></div></div>
+          <div class="skill-item"><span class="name">JWT</span><span class="pct">80%</span></div><div class="skill-bar"><div class="skill-fill" data-w="80"></div></div>
+        </div>
+        <div class="skill-group"><h4>Frontend</h4>
+          <div class="skill-item"><span class="name">HTML/CSS</span><span class="pct">90%</span></div><div class="skill-bar"><div class="skill-fill" data-w="90"></div></div>
+          <div class="skill-item"><span class="name">JavaScript</span><span class="pct">80%</span></div><div class="skill-bar"><div class="skill-fill" data-w="80"></div></div>
+          <div class="skill-item"><span class="name">React</span><span class="pct">70%</span></div><div class="skill-bar"><div class="skill-fill" data-w="70"></div></div>
+        </div>
+        <div class="skill-group"><h4>Database</h4>
+          <div class="skill-item"><span class="name">MySQL</span><span class="pct">80%</span></div><div class="skill-bar"><div class="skill-fill" data-w="80"></div></div>
+        </div>
+        <div class="skill-group"><h4>AI / ML</h4>
+          <div class="skill-item"><span class="name">Scikit-learn</span><span class="pct">75%</span></div><div class="skill-bar"><div class="skill-fill" data-w="75"></div></div>
+          <div class="skill-item"><span class="name">Pandas</span><span class="pct">85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
+          <div class="skill-item"><span class="name">NumPy</span><span class="pct">80%</span></div><div class="skill-bar"><div class="skill-fill" data-w="80"></div></div>
+        </div>
+        <div class="skill-group"><h4>Tools</h4>
+          <div class="skill-item"><span class="name">Git</span><span class="pct">85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
+          <div class="skill-item"><span class="name">VS Code</span><span class="pct">90%</span></div><div class="skill-bar"><div class="skill-fill" data-w="90"></div></div>
+          <div class="skill-item"><span class="name">IntelliJ</span><span class="pct">85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
+          <div class="skill-item"><span class="name">Postman</span><span class="pct">80%</span></div><div class="skill-bar"><div class="skill-fill" data-w="80"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="layer" id="layer-projects" style="align-items:stretch;">
+    <div class="inner" style="position:relative; height:100%; display:flex; flex-direction:column; justify-content:flex-end; padding-bottom:5vh;">
+      <div class="projects-title" style="position:absolute; top:5vh; left:clamp(20px,5vw,64px);">SELECTED WORK</div>
+      <div class="project-card p1" id="proj-0">
+        <div class="project-num">01</div>
+        <div class="project-info interactive">
+          <h3>AI PDF to Course Generator</h3>
+          <p>Restructures any PDF into a bite-sized course with chapters, summaries, and auto-generated quizzes.</p>
+          <div class="project-tags"><span>Python</span><span>NLP</span><span>Flask</span><span>PDF Parsing</span></div>
+          <a class="project-link" href="#" data-cursor="OPEN">View Project →</a>
+        </div>
+      </div>
+      <div class="project-card p2" id="proj-1">
+        <div class="project-num">02</div>
+        <div class="project-info interactive">
+          <h3>Netflix Watch Pattern Analyzer</h3>
+          <p>Surfaces viewing patterns — binge streaks, genre drift, and time-of-day habits from your Netflix history.</p>
+          <div class="project-tags"><span>Python</span><span>Pandas</span><span>Data Viz</span><span>Jupyter</span></div>
+          <a class="project-link" href="#" data-cursor="OPEN">View Project →</a>
+        </div>
+      </div>
+      <div class="project-card p3" id="proj-2">
+        <div class="project-num">03</div>
+        <div class="project-info interactive">
+          <h3>Heart Disease Prediction</h3>
+          <p>Predicts heart disease risk by comparing logistic regression, random forest, and SVM classifiers.</p>
+          <div class="project-tags"><span>Scikit-learn</span><span>Pandas</span><span>NumPy</span><span>ML</span></div>
+          <a class="project-link" href="#" data-cursor="OPEN">View Project →</a>
+        </div>
+      </div>
+      <div class="project-card p4" id="proj-3">
+        <div class="project-num">04</div>
+        <div class="project-info interactive">
+          <h3>SaaS Landing Page</h3>
+          <p>Conversion-focused SaaS template with pricing tiers, feature comparison, and signup flow.</p>
+          <div class="project-tags"><span>React</span><span>Tailwind</span><span>Node.js</span></div>
+          <a class="project-link" href="#" data-cursor="OPEN">View Project →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="layer" id="layer-experience">
+    <div class="inner" style="overflow-y:auto; max-height:90vh;">
+      <div class="eyebrow">Experience & Education</div>
+      <h2 class="section-heading">Where I've been</h2>
+      <div class="timeline">
+        <div class="timeline-item"><div class="tl-date">Summer 2025</div><div class="tl-body"><h3>Backend Development Intern</h3><div class="meta">Company Name · Internship</div><p>Built REST APIs using Spring Boot, MySQL data modeling, JWT-based authentication.</p></div></div>
+        <div class="timeline-item"><div class="tl-date">2024 — Present</div><div class="tl-body"><h3>Freelance Developer</h3><div class="meta">Self-employed · Freelance</div><p>Landing pages and inventory management systems for local clients.</p></div></div>
+        <div class="timeline-item"><div class="tl-date">2023 — Present</div><div class="tl-body"><h3>Open Source Contributor</h3><div class="meta">GitHub · Open Source</div><p>Java & Python repos — documentation improvements and bug fixes.</p></div></div>
+        <div class="timeline-item"><div class="tl-date">Expected 2026</div><div class="tl-body"><h3>B.Tech, Computer Science & Engineering</h3><div class="meta">Your College Name · CGPA: 8.5 / 10</div><p>Data structures, algorithms, database systems, machine learning.</p></div></div>
+      </div>
+      <div style="margin-top:40px">
+        <div class="eyebrow">Achievements</div>
+        <div class="achv-grid">
+          <div class="achv"><div class="num">01</div><h4>Flipkart GRiD — Round 2</h4><p>Advanced to round 2 of the software challenge.</p></div>
+          <div class="achv"><div class="num">02</div><h4>300+ LeetCode</h4><p>Arrays, DP, graphs, trees.</p></div>
+          <div class="achv"><div class="num">03</div><h4>2 Hackathons</h4><p>Built and pitched at campus events.</p></div>
+          <div class="achv"><div class="num">04</div><h4>3+ Certifications</h4><p>Backend dev & cloud fundamentals.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="layer" id="layer-contact">
+    <div class="inner" style="overflow-y:auto; max-height:90vh;">
+      <div class="contact-title">
+        <span class="filled">LET'S</span><br>BUILD<br>SOMETHING
+      </div>
+      <a class="contact-email interactive" href="mailto:shaikibrahim@example.com" data-cursor="SEND">shaikibrahim@example.com</a>
+      <form class="contact-form interactive" id="contact-form">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Message" required></textarea>
+        <button type="submit" data-cursor="SEND">Send message</button>
+      </form>
+      <div class="contact-socials interactive">
+        <a href="https://github.com/Shaikibbu07" target="_blank" data-cursor="OPEN">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" data-cursor="OPEN">LinkedIn</a>
+        <a href="mailto:shaikibrahim@example.com" data-cursor="SEND">Email</a>
+      </div>
+      <div class="contact-footer">© 2025 Shaik Ibrahim · Built with code</div>
+    </div>
+  </div>
+
+  <!-- Command Palette -->
+  <div id="cmd">
+    <div class="cmd-box">
+      <div class="cmd-search">
+        <span style="color:var(--muted)">⌘</span>
+        <input type="text" id="cmd-input" placeholder="Type a command..." autocomplete="off">
+      </div>
+      <div class="cmd-list" id="cmd-list"></div>
+    </div>
+  </div>
+
+  <!-- Toast area -->
+  <div id="toast-area"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
