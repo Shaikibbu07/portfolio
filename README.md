@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🚀 Shaik Ibrahim — Portfolio
 
 An immersive, cinematic portfolio website inspired by [Active Theory](https://activetheory.net/). Features a scroll-driven 3D particle environment, smooth camera animations, and cinematic section transitions.
@@ -96,3 +97,6 @@ MIT — feel free to use and customize.
 ---
 
 Built by **Shaik Ibrahim** · Java Backend Developer · AI Enthusiast
+=======
+# portfolio
+>>>>>>> 0fad06ce0e9b54f27fc76439a2ec6403984170b0
