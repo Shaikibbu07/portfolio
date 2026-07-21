@@ -10,10 +10,10 @@ const plLine = document.getElementById('pl-line');
 const plPct = document.getElementById('pl-pct');
 
 // Build name letters
-'SHAIK IBRAHIM'.split('').forEach((ch, i) => {
+'SHAIK IBRAHEEM'.split('').forEach((ch, i) => {
   const s = document.createElement('span');
   s.textContent = ch === ' ' ? '\u00A0' : ch;
-  s.style.transitionDelay = (i * 0.04) + 's';
+  s.style.transitionDelay = (i * 0.05) + 's';
   plName.appendChild(s);
 });
 
@@ -387,16 +387,27 @@ themeBtn.addEventListener('click', () => {
 const cmdEl = document.getElementById('cmd');
 const cmdInput = document.getElementById('cmd-input');
 const cmdList = document.getElementById('cmd-list');
-const COMMANDS = [
+const commands = [
   { label: 'Go to About', key: '↵', action: () => navTo('about') },
   { label: 'Go to Skills', key: '↵', action: () => navTo('skills') },
   { label: 'Go to Projects', key: '↵', action: () => navTo('projects') },
   { label: 'Go to Experience', key: '↵', action: () => navTo('experience') },
   { label: 'Go to Contact', key: '↵', action: () => navTo('contact') },
+
+  { label: 'Download Resume', key: '↓', action: () => window.open('resume.pdf', '_blank') },
+
+  { label: 'Open GitHub', key: '↗', action: () => window.open('https://github.com/Shaikibbu07', '_blank') },
+
+  { label: 'Open LinkedIn', key: '↗', action: () => window.open('https://www.linkedin.com/in/ibraheem-shaik-914930317/', '_blank') },
+
+  // Replace with your actual LeetCode profile
+  { label: 'Open LeetCode', key: '↗', action: () => window.open('https://leetcode.com/', '_blank') },
+
+  { label: 'Send Email', key: '✉', action: () => window.location.href = 'mailto:shaikibbu548@gmail.com' },
+
   { label: 'Toggle Theme', key: '↵', action: () => themeBtn.click() },
-  { label: 'Open GitHub', key: '↗', action: () => window.open('https://github.com/Shaikibbu07','_blank') },
-  { label: 'Open LinkedIn', key: '↗', action: () => window.open('https://linkedin.com/in/','_blank') },
-  { label: 'Back to Top', key: '↑', action: () => window.scrollTo({top:0,behavior:'smooth'}) },
+
+  { label: 'Back to Top', key: '↑', action: () => window.scrollTo({ top: 0, behavior: 'smooth' }) },
 ];
 let cmdSel = 0;
 
