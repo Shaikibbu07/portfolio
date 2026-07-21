@@ -59,9 +59,10 @@ document.getElementById('hero-greeting').textContent =
 /* ═══════════ TYPEWRITER ═══════════ */
 const phrases = [
   'Building scalable backend systems.',
-  'Crafting robust APIs with Spring Boot.',
-  'Exploring AI and machine learning.',
-  'Turning problems into elegant solutions.'
+  'Developing REST APIs with Spring Boot.',
+  'Solving DSA problems every day.',
+  'Learning. Building. Improving.',
+  'Future Software Engineer.'
 ];
 let pi = 0, ci = 0, deleting = false;
 const twEl = document.getElementById('typewriter');
