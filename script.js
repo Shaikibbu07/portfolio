@@ -489,7 +489,7 @@ document.addEventListener('keydown', e => {
 });
 
 function activateMatrix() {
-  showToast('🟢 Matrix Mode Activated');
+  showToast(' Matrix Mode Activated');
   document.documentElement.style.setProperty('--accent','#0f0');
   document.documentElement.style.setProperty('--accent2','#0a0');
   setTimeout(() => {
